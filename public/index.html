@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Vida+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vida+</h1>
+        <p>Sistema de Gestão de Clínica Médica</p>
+    </header>
+
+    <div id="msg" role="status" aria-live="polite"></div>
+
+    <main>
+
+        <section>
+            <h2>Paciente</h2>
+
+            <form id="paciente">
+                <input name="cpf" placeholder="CPF" required>
+                <input name="nome" placeholder="Nome completo" required>
+
+                <label>
+                    Nascimento
+                    <input name="data_nascimento" type="date">
+                </label>
+
+                <select name="sexo">
+                    <option value="">Sexo</option>
+                    <option>Feminino</option>
+                    <option>Masculino</option>
+                    <option>Outro</option>
+                </select>
+
+                <input name="telefone" placeholder="Telefone">
+                <input name="email" type="email" placeholder="E-mail">
+                <input name="endereco" placeholder="Endereço">
+
+                <button>Cadastrar paciente</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Profissional / Médico</h2>
+
+            <form id="profissional">
+                <input name="nome" placeholder="Nome" required>
+                <input name="cpf" placeholder="CPF" required>
+                <input name="telefone" placeholder="Telefone">
+                <input name="email" type="email" placeholder="E-mail">
+
+                <label>
+                    Nascimento
+                    <input name="data_nascimento" type="date">
+                </label>
+
+                <select name="tipo_registro" id="tipo">
+                    <option>Médico</option>
+                    <option>Enfermeiro</option>
+                    <option>Outro</option>
+                </select>
+
+                <input
+                    name="registro_profissional"
+                    placeholder="Registro profissional"
+                    required
+                >
+
+                <div id="crm">
+                    <input name="crm_numero" placeholder="Número CRM">
+                    <input name="crm_uf" placeholder="UF CRM" maxlength="2">
+
+                    <select name="especialidade_id" id="especialidade"></select>
+                </div>
+
+                <button>Cadastrar profissional</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Convênio</h2>
+
+            <form id="convenio">
+                <input name="nome" placeholder="Nome do convênio" required>
+                <button>Cadastrar convênio</button>
+            </form>
+
+            <h3>Vincular convênio</h3>
+
+            <form id="vinculo">
+                <select name="paciente_id" id="pacienteConvenio" required></select>
+                <select name="convenio_id" id="convenioSelect" required></select>
+
+                <input
+                    name="numero_carteirinha"
+                    placeholder="Carteirinha"
+                    required
+                >
+
+                <label>
+                    Adesão
+                    <input name="data_adesao" type="date" required>
+                </label>
+
+                <select name="situacao">
+                    <option>Ativo</option>
+                    <option>Inativo</option>
+                    <option>Suspenso</option>
+                </select>
+
+                <button>Vincular</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Agendamento</h2>
+
+            <form id="agendamento">
+                <select name="paciente_id" id="pacienteAg" required></select>
+                <select name="medico_id" id="medicoAg" required></select>
+
+                <label>
+                    Data
+                    <input name="data_agendamento" type="date" required>
+                </label>
+
+                <label>
+                    Horário
+                    <input name="horario" type="time" required>
+                </label>
+
+                <select name="situacao">
+                    <option>Agendado</option>
+                    <option>Realizado</option>
+                    <option>Cancelado</option>
+                </select>
+
+                <button>Salvar agendamento</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Exames</h2>
+
+            <form id="exame">
+                <input name="nome" placeholder="Nome do exame" required>
+                <input name="descricao" placeholder="Descrição">
+                <input name="tipo" placeholder="Tipo">
+
+                <button>Cadastrar exame</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Pacientes cadastrados</h2>
+            <div id="listaPacientes"></div>
+        </section>
+
+
+        <section>
+            <h2>Profissionais cadastrados</h2>
+            <div id="listaProfissionais"></div>
+        </section>
+
+
+        <section>
+            <h2>Agendamentos</h2>
+            <div id="listaAgendamentos"></div>
+        </section>
+
+
+        <section>
+            <h2>Consultas realizadas</h2>
+            <div id="listaConsultas"></div>
+        </section>
+
+
+        <section>
+            <h2>Exames cadastrados</h2>
+            <div id="listaExames"></div>
+        </section>
+
+
+        <section>
+            <h2>Solicitar exame para uma consulta</h2>
+
+            <form id="solicitarExame">
+                <select name="consulta_id" id="consultaExame" required></select>
+                <select name="paciente_id" id="pacienteExame" required></select>
+                <select name="exame_id" id="exameSelect" required></select>
+
+                <label>
+                    Data da solicitação
+                    <input name="data_solicitacao" type="date" required>
+                </label>
+
+                <button>Registrar solicitação</button>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Exames solicitados</h2>
+            <div id="listaSolicitacoes"></div>
+        </section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

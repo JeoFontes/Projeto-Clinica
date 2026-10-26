@@ -1,0 +1,15 @@
+PROJETO CLÍNICA VIDA+
+
+1. Abra o MySQL Workbench e execute todo o arquivo database.sql.
+2. Confira os dados de conexão no arquivo .env (usuário, senha e banco).
+3. Abra o terminal na pasta Clinica_Projeto_Integrado.
+4. Execute: npm install
+5. Execute: npm start
+6. Acesse: http://localhost:3000
+
+As mensagens de sucesso e erro aparecem no final da página.
+O cadastro de paciente e de profissional verifica CPF duplicado.
+O banco também possui CPF como campo UNIQUE, para impedir duplicidade mesmo
+quando a requisição é feita fora do formulário.
+
+Se o MySQL tiver senha, preencha DB_PASSWORD no arquivo .env.

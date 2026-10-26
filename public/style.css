@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background: #f1f7f3;
+    color: #26372d;
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background: #176b4d;
+    color: white;
+    padding: 18px 5%;
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+
+main {
+    max-width: 1000px;
+    width: 94%;
+    margin: 20px auto;
+}
+
+
+section {
+    background: white;
+    border: 1px solid #d5e5da;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 15px;
+}
+
+
+h2,
+h3 {
+    color: #176b4d;
+    margin-top: 0;
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+
+input,
+select,
+button {
+    padding: 10px;
+    border: 1px solid #c7d8cd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 0;
+}
+
+
+label {
+    font-size: 13px;
+}
+
+
+button {
+    background: #21845e;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+
+#crm {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+}
+
+
+td,
+th {
+    border-bottom: 1px solid #e1ebe4;
+    text-align: left;
+    padding: 8px;
+}
+
+
+#msg {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 14px 5%;
+    margin: 0;
+    border-radius: 0;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+#msg.sucesso {
+    display: block;
+    color: #155d3b;
+    background: #e1f5e8;
+    border: 1px solid #a7d9b7;
+}
+
+#msg.erro {
+    display: block;
+    color: #8a2020;
+    background: #fde8e8;
+    border: 1px solid #e9aaaa;
+}
+
+
+@media (max-width: 650px) {
+    form,
+    #crm {
+        grid-template-columns: 1fr;
+    }
+}
